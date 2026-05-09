@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>For U Mumma 💗🎀</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+body{
+  font-family:'Nunito',sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+  background:#d4f5e2;
+}
+
+/* ── FLOATING BG FLOWERS ── */
+.bg-decor{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.flower{
+  position:absolute;opacity:0.15;
+  animation:floatF ease-in-out infinite alternate;
+}
+@keyframes floatF{
+  0%{transform:translateY(0) rotate(-8deg) scale(1);}
+  100%{transform:translateY(-18px) rotate(8deg) scale(1.05);}
+}
+
+/* ── PAGES ── */
+.page{display:none;min-height:100vh;position:relative;z-index:1;}
+.page.active{display:flex;flex-direction:column;align-items:center;justify-content:center;}
+
+/* ════════ PAGE 1 ════════ */
+#page1{
+  background:linear-gradient(155deg,#b8edd0 0%,#e0f5eb 35%,#fce4f0 75%,#f9c8e0 100%);
+  padding:80px 24px 60px;
+  text-align:center;
+}
+
+.p1-title{
+  font-family:'Pacifico',cursive;
+  font-size:clamp(1.7rem,6vw,2.7rem);
+  color:#2a7a50;
+  margin-bottom:34px;
+  text-shadow:0 2px 10px rgba(42,122,80,0.18);
+}
+
+.photo-stack{
+  position:relative;
+  width:190px;
+  margin:0 auto 28px;
+}
+.photo-circle{
+  width:190px;height:190px;
+  border-radius:50%;
+  border:5px solid #fff;
+  box-shadow:0 8px 36px rgba(0,0,0,0.18);
+  overflow:hidden;
+  background:#ffe4f0;
+  display:flex;align-items:center;justify-content:center;
+}
+.photo-circle img{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+}
+
+.crown-over{
+  position:absolute;
+  top:-56px;left:50%;
+  transform:translateX(-50%);
+  font-size:4.5rem;
+  filter:drop-shadow(0 4px 14px rgba(0,0,0,0.2));
+  animation:crownFloat 2.8s ease-in-out infinite;
+  z-index:2;
+}
+@keyframes crownFloat{
+  0%,100%{transform:translateX(-50%) translateY(0);}
+  50%{transform:translateX(-50%) translateY(-10px);}
+}
+
+.queen-pill{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,0.88);
+  backdrop-filter:blur(6px);
+  border-radius:60px;
+  padding:15px 38px;
+  font-size:clamp(1.25rem,5vw,1.75rem);
+  font-weight:800;
+  color:#222;
+  box-shadow:0 6px 24px rgba(0,0,0,0.12);
+  margin-bottom:16px;
+  border:2px solid rgba(255,255,255,0.6);
+}
+
+.p1-sub{
+  color:#4a8066;
+  font-size:1rem;font-weight:600;
+  line-height:1.7;
+  margin-bottom:36px;
+  max-width:340px;
+}
+
+.magic-btn{
+  background:linear-gradient(135deg,#38c172,#25a05a);
+  color:#fff;border:none;
+  padding:17px 52px;
+  border-radius:50px;
+  font-size:1.15rem;font-weight:800;
+  font-family:'Nunito',sans-serif;
+  cursor:pointer;
+  box-shadow:0 8px 28px rgba(37,160,90,0.45);
+  transition:transform 0.18s,box-shadow 0.18s;
+}
+.magic-btn:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 14px 36px rgba(37,160,90,0.55);}
+.magic-btn:active{transform:scale(0.97);}
+
+/* ════════ PAGE 2 ════════ */
+#page2{
+  background:linear-gradient(155deg,#f167da 0%,#79056f 50%,#1a2740 100%);
+  min-height:100vh;
+  padding:36px 20px 50px;
+  align-items:center;
+}
+
+.p2-title{
+  font-family:'Pacifico',cursive;
+  font-size:clamp(1.5rem,5.5vw,2.4rem);
+  color:#fff;
+  text-align:center;
+  margin-bottom:8px;
+  text-shadow:0 2px 16px rgba(255,140,200,0.5);
+}
+.remaining-pill{
+  background:rgba(255,255,255,0.1);
+  color:#ffcce6;
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:30px;
+  padding:7px 22px;
+  font-size:0.9rem;font-weight:700;
+  margin-bottom:34px;
+  text-align:center;
+}
+
+.balloons-grid{
+  display:flex;flex-wrap:wrap;
+  justify-content:center;
+  gap:28px 20px;
+  max-width:640px;
+}
+
+.bal-wrap{
+  display:flex;flex-direction:column;align-items:center;
+  cursor:pointer;
+  position:relative;
+}
+.bal-body{
+  width:85px;height:105px;
+  border-radius:50% 50% 50% 50% / 44% 44% 56% 56%;
+  position:relative;
+  animation:balBob 2.6s ease-in-out infinite;
+  transition:transform 0.15s;
+  filter:drop-shadow(0 10px 20px rgba(0,0,0,0.35));
+}
+.bal-wrap:nth-child(2) .bal-body{animation-delay:0.35s;}
+.bal-wrap:nth-child(3) .bal-body{animation-delay:0.7s;}
+.bal-wrap:nth-child(4) .bal-body{animation-delay:1.05s;}
+.bal-wrap:nth-child(5) .bal-body{animation-delay:1.4s;}
+@keyframes balBob{
+  0%,100%{transform:translateY(0px) rotate(-3deg);}
+  50%{transform:translateY(-16px) rotate(3deg);}
+}
+.bal-wrap:hover .bal-body{transform:scale(1.13)!important;}
+
+.bal-body::before{
+  content:'';
+  position:absolute;
+  top:12px;left:14px;
+  width:20px;height:28px;
+  background:rgba(255,255,255,0.32);
+  border-radius:50%;
+  transform:rotate(-25deg);
+}
+.bal-emoji{
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  font-size:2rem;
+  z-index:2;
+  pointer-events:none;
+}
+.bal-knot{width:14px;height:10px;border-radius:50%;margin-top:-1px;}
+.bal-string{width:2px;height:45px;background:rgba(255,255,255,0.3);border-radius:2px;}
+
+.bal-wrap.popped{cursor:default;}
+.bal-wrap.popped .bal-body,
+.bal-wrap.popped .bal-knot,
+.bal-wrap.popped .bal-string{display:none;}
+
+.pop-bang{
+  display:none;
+  font-size:3.2rem;
+  animation:bangAnim 0.6s ease-out forwards;
+}
+@keyframes bangAnim{
+  0%{transform:scale(0.2);opacity:1;}
+  65%{transform:scale(1.6);opacity:1;}
+  100%{transform:scale(1.3);opacity:0;}
+}
+.bal-wrap.popped .pop-bang{display:block;}
+
+/* ── REVEAL POPUP ── */
+.popup-overlay{
+  display:none;
+  position:fixed;inset:0;z-index:500;
+  background:rgba(0,0,0,0.65);
+  backdrop-filter:blur(5px);
+  align-items:center;justify-content:center;
+}
+.popup-overlay.show{display:flex;}
+.popup-card{
+  background:#fff;
+  border-radius:28px;
+  padding:28px 24px 24px;
+  max-width:320px;width:88%;
+  text-align:center;
+  box-shadow:0 24px 70px rgba(0,0,0,0.45);
+  animation:cardBounce 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards;
+}
+@keyframes cardBounce{
+  from{transform:scale(0.4) translateY(50px);opacity:0;}
+  to{transform:scale(1) translateY(0);opacity:1;}
+}
+.popup-img-wrap{
+  width:140px;height:140px;
+  border-radius:50%;
+  overflow:hidden;
+  border:4px solid #ffb3cc;
+  margin:0 auto 16px;
+  background:#ffe4f0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:4rem;
+}
+.popup-img-wrap img{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+}
+.popup-msg{
+  color:#333;
+  font-size:1rem;line-height:1.65;
+  font-weight:700;
+  margin-bottom:20px;
+}
+.popup-btn{
+  background:linear-gradient(135deg,#ff79a8,#e0448a);
+  color:#fff;border:none;
+  padding:13px 36px;border-radius:30px;
+  font-size:1rem;font-weight:800;
+  font-family:'Nunito',sans-serif;
+  cursor:pointer;
+  box-shadow:0 6px 18px rgba(224,68,138,0.38);
+  transition:transform 0.15s;
+}
+.popup-btn:hover{transform:scale(1.05);}
+
+/* All done */
+.all-done{
+  display:none;
+  text-align:center;
+  margin-top:24px;
+  animation:cardBounce 0.7s cubic-bezier(0.34,1.56,0.64,1) forwards;
+}
+.all-done h2{
+  font-family:'Pacifico',cursive;
+  font-size:clamp(1.8rem,6vw,2.8rem);
+  color:#fff;
+  text-shadow:0 0 24px rgba(255,150,200,0.7);
+  margin-bottom:10px;
+}
+.all-done p{color:#ffcce6;font-size:1rem;font-weight:700;}
+
+/* ── FLYING HEARTS ── */
+.fheart{
+  position:fixed;
+  pointer-events:none;
+  z-index:600;
+  animation:fhUp ease-out forwards;
+}
+@keyframes fhUp{
+  0%{transform:translateY(0) scale(1) rotate(0deg);opacity:1;}
+  100%{transform:translateY(-200px) scale(0.3) rotate(25deg);opacity:0;}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-decor" id="bgDecor"></div>
+
+<!-- 
+  🎵 BACKGROUND MUSIC
+  To add your song:
+  1. Download MP3 from yt1s.com
+  2. Upload to catbox.moe
+  3. Replace the src URL below with your link
+-->
+<audio id="bgMusic" loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg"/>
+</audio>
+
+<!-- ═══════════ PAGE 1 ═══════════ -->
+<div class="page active" id="page1">
+
+  <h1 class="p1-title">Happy Mother's Day🎉
+  </h1>
+
+  <div class="photo-stack">
+    <div class="crown-over">👑</div>
+    <div class="photo-circle">
+      <img src="https://i.ibb.co/DDxQZPDb/mm.jpg">
+    </div>
+  </div>
+
+  <div class="queen-pill">
+    You're a Queen 👑
+  </div>
+
+  <p class="p1-sub">
+    I've prepared something special for you.<br/>
+    Pop all the balloons to uncover! ❤️
+  </p>
+
+  <button class="magic-btn" onclick="startGift()">Start the Magic ✨</button>
+</div>
+
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<div class="page" id="page2">
+  <h1 class="p2-title">Pop the balloons, Mumma!🎈🤗</h1>
+  <div class="remaining-pill" id="remainPill">5 surprises remaining</div>
+  <div class="balloons-grid" id="balGrid"></div>
+  <div class="all-done" id="allDone">
+    <p style="font-size:2.5rem;margin-bottom:10px;">💖 💗 💖 💗 💖</p>
+    <h2>You found them all!</h2>
+    <p style="margin-top:8px;">You are loved more than words can ever say. 🌸</p>
+  </div>
+</div>
+
+<!-- ═══════════ POPUP ═══════════ -->
+<div class="popup-overlay" id="popupOverlay">
+  <div class="popup-card">
+    <div class="popup-img-wrap" id="popupImg"></div>
+    <p class="popup-msg" id="popupMsg"></p>
+    <button class="popup-btn" onclick="closePopup()">Aww, so sweet! 💕</button>
+  </div>
+</div>
+
+<script>
+const BALLOONS = [
+  {
+    color:'#ff5e7e', shine:'#ff9fb8',
+    emoji:'🎊',
+    photo: "https://i.ibb.co/HTKdwDZm/Whats-App-Image-2026-05-09-at-2-28-48-PM-2.jpg",
+    msg: "Happy Mother's Day Mumma!!🎊"
+  },
+  {
+    color:'#a855f7', shine:'#d0a0ff',
+    emoji:'💖',
+    photo: "https://i.ibb.co/wZZ7RtFj/Whats-App-Image-2026-05-09-at-2-28-47-PM.jpg",
+    msg: "Lots of Love from ur Betu 😘💖"
+  },
+  {
+    color:'#f472b6', shine:'#f9a8d4',
+    emoji:'🙏',
+    photo: "https://i.ibb.co/N23r0YpG/Whats-App-Image-2026-05-09-at-2-28-49-PM.jpg",
+    msg: "Meri life ke do bhagwan G ek hi frame me 🙏"
+  },
+  {
+    color:'#f5a623', shine:'#f9cc7a',
+    emoji:'😘',
+    photo: "https://i.ibb.co/fVbXh0Xf/Whats-App-Image-2026-05-09-at-2-28-45-PM.jpg",
+    msg: "Apko bhi nhi pta ki ap kitne pyare ho😘✨"
+  },
+  {
+    color:'#34d399', shine:'#7de8ac',
+    emoji:'🍦',
+    photo: "https://i.ibb.co/1tvrDxV6/Whats-App-Image-2026-05-09-at-2-55-44-PM.jpg",
+    msg: "Aj apne pasand ka khana bna lena😁 Or apni favourite Kulfi icecream to jrur mngwa lena🍦🤤"
+  },
+];
+
+let poppedCount = 0;
+const TOTAL = BALLOONS.length;
+
+// Build bg flowers
+(function(){
+  const wrap = document.getElementById('bgDecor');
+  const icons = ['🌸','🌺','🌼','🌷','🍀','✿'];
+  for(let i=0;i<20;i++){
+    const el=document.createElement('div');
+    el.className='flower';
+    el.textContent=icons[Math.floor(Math.random()*icons.length)];
+    el.style.cssText=`
+      left:${Math.random()*96}%;top:${Math.random()*96}%;
+      font-size:${1+Math.random()*2.2}rem;
+      animation-duration:${3.5+Math.random()*4}s;
+      animation-direction:${Math.random()>.5?'alternate':'alternate-reverse'};
+    `;
+    wrap.appendChild(el);
+  }
+})();
+
+function buildBalloons(){
+  const grid=document.getElementById('balGrid');
+  BALLOONS.forEach((b,i)=>{
+    const w=document.createElement('div');
+    w.className='bal-wrap';w.id='bal'+i;
+    w.innerHTML=`
+      <div class="bal-body" style="background:radial-gradient(circle at 32% 30%,${b.shine},${b.color})">
+        <div class="bal-emoji">${b.emoji}</div>
+      </div>
+      <div class="bal-knot" style="background:${b.color}"></div>
+      <div class="bal-string"></div>
+      <div class="pop-bang">💥</div>
+    `;
+    w.onclick=()=>popBalloon(i,w,b);
+    grid.appendChild(w);
+  });
+}
+
+function popBalloon(idx,el,data){
+  if(el.classList.contains('popped'))return;
+  el.classList.add('popped');
+  playPopSound();
+  launchHearts(el);
+  poppedCount++;
+  updatePill();
+  setTimeout(()=>openPopup(data),380);
+}
+
+function updatePill(){
+  const r=TOTAL-poppedCount;
+  document.getElementById('remainPill').textContent=
+    r>0?`${r} surprise${r>1?'s':''} remaining`:'All surprises found! 🎉';
+}
+
+function openPopup(data){
+  const imgWrap=document.getElementById('popupImg');
+  imgWrap.innerHTML=`<img src="${data.photo}" alt="memory"/>`;
+  document.getElementById('popupMsg').textContent=data.msg;
+  document.getElementById('popupOverlay').classList.add('show');
+}
+
+function closePopup(){
+  document.getElementById('popupOverlay').classList.remove('show');
+  if(poppedCount===TOTAL){
+    setTimeout(()=>{
+      document.getElementById('allDone').style.display='block';
+      massHearts();
+    },300);
+  }
+}
+
+function playPopSound(){
+  try{
+    const ctx=new(window.AudioContext||window.webkitAudioContext)();
+    const buf=ctx.createBuffer(1,ctx.sampleRate*0.09,ctx.sampleRate);
+    const d=buf.getChannelData(0);
+    for(let i=0;i<d.length;i++) d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,1.5);
+    const src=ctx.createBufferSource();src.buffer=buf;
+    const g=ctx.createGain();
+    g.gain.setValueAtTime(1.2,ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.09);
+    const bq=ctx.createBiquadFilter();bq.type='bandpass';bq.frequency.value=800;bq.Q.value=0.5;
+    src.connect(bq);bq.connect(g);g.connect(ctx.destination);
+    src.start();
+  }catch(e){}
+}
+
+function launchHearts(el){
+  const r=el.getBoundingClientRect();
+  const cx=r.left+r.width/2, cy=r.top+r.height/2;
+  const hs=['💖','💗','💝','💕','❤️','🩷','✨','💞'];
+  for(let i=0;i<12;i++){
+    const h=document.createElement('div');
+    h.className='fheart';
+    h.textContent=hs[Math.floor(Math.random()*hs.length)];
+    const ox=(Math.random()-0.5)*90;
+    h.style.cssText=`
+      left:${cx+ox}px;top:${cy}px;
+      font-size:${1.1+Math.random()*1.4}rem;
+      animation-duration:${1+Math.random()*0.7}s;
+      animation-delay:${Math.random()*0.25}s;
+    `;
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),2000);
+  }
+}
+
+function massHearts(){
+  for(let i=0;i<45;i++){
+    setTimeout(()=>{
+      const h=document.createElement('div');
+      h.className='fheart';
+      h.textContent=['💖','💗','💝','💕','❤️','🩷','✨','🌸','🎀'][Math.floor(Math.random()*9)];
+      h.style.cssText=`
+        left:${5+Math.random()*90}%;
+        top:${35+Math.random()*50}%;
+        font-size:${1.4+Math.random()*2.2}rem;
+        animation-duration:${1.4+Math.random()*1.2}s;
+      `;
+      document.body.appendChild(h);
+      setTimeout(()=>h.remove(),3000);
+    },i*65);
+  }
+}
+
+function startGift(){
+  const m=document.getElementById('bgMusic');
+  m.volume=0.45;
+  m.play().catch(()=>{});
+  document.getElementById('page1').classList.remove('active');
+  document.getElementById('page2').classList.add('active');
+}
+
+buildBalloons();
+</script>
+</body>
+</html>
