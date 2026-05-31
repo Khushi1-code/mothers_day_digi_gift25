@@ -1,4 +1,4 @@
-Mother's Day personalized digital gift made with love for my mom. 🌸
+A personalized digital gift made with love for my mom. 🌸
 ✨ What it does
 
 Landing page with Mumma's photo and a crown 👑
@@ -9,7 +9,7 @@ A sweet ending when all balloons are popped 💖
 
 🚀 How to open
 Just open index.html in any browser — no setup needed.
-Or view it live → https://khushi1-code.github.io/digital_gift_mothers_day25/
+Or view it live → https://khushi1-code.github.io/mothers_day_digi_gift25/
 🛠️ Built with
 HTML · CSS · Vanilla JavaScript
 
