@@ -1,5 +1,4 @@
-💗 For U Mumma — Mother's Day Gift
-A personalized digital gift made with love for my mom. 🌸
+Mother's Day personalized digital gift made with love for my mom. 🌸
 ✨ What it does
 
 Landing page with Mumma's photo and a crown 👑
